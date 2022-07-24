@@ -1,6 +1,6 @@
-//const groth16 = require("snarkjs");
+const groth16 = require("snarkjs");
 //import { groth16 } from "snarkjs";
-const groth16 = require("snarkjs").groth16;
+//const groth16 = require("snarkjs").groth16;
 
 
 export async function exportCallDataGroth16(input, wasmPath, zkeyPath) {

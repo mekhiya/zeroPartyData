@@ -21,46 +21,18 @@ export default function About(props) {
   const account = useContext(AccountContext)
 
   const router = useRouter()
-  async function navigate() {
-    router.push('/create-post')
-  }
 
   return (
     <div>
-      <div className={postList}>
-        {
-          /* map over the posts array and render a button with the post title */
-          // posts.map((post, index) => (
-          //   <Link href={`/post/${post[2]}`} key={index}>
-          //     <a>
-          //       <div className={linkStyle}>
-          //         <p className={postTitle}>{post[1]}</p>
-          //         <div className={arrowContainer}>
-          //         <img
-          //             src='/right-arrow.svg'
-          //             alt='Right arrow'
-          //             className={smallArrow}
-          //           />
-          //         </div>
-          //       </div>
-          //     </a>
-          //   </Link>
-          // ))
-        }
-      </div>
       <div className={container}>
-        {
-          
-          <button className={buttonStyle} onClick={navigate}>
-              Create your first post
-              <img
-                src='/right-arrow.svg'
-                alt='Right arrow'
-                className={arrow}
-              />
-            </button>
-          
-        }
+        <div className="grid place-items-center">
+          <div className="flex items-center justify-center mb-10 text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-emerald-500">
+            zeroPartyData
+          </div>
+          <div className="flex items-center justify-center w-auto text-lg md:w-96 text-slate-300">
+            zeroPartData project uses Zero Knowledge Proof to verify eligibility for gifts & discount offers by Brands.
+          </div>
+        </div>
       </div>
     </div>
   )

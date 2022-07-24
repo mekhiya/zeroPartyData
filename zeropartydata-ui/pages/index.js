@@ -1,6 +1,6 @@
 /* pages/index.js */
 import { css } from '@emotion/css'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { useRouter } from 'next/router'
 import { ethers } from 'ethers'
 import Link from 'next/link'
@@ -15,7 +15,7 @@ import {
 import ZeroPartyDataAbi from '../utils/abiFiles/ZeroPartyData.json'
 //import sudokuContractAbi from "../utils/abiFiles/Sudoku.json";
 //import { sudokuCalldata } from "../zkproof/sudoku/snarkjsSudoku";
-import { zpdCalldata } from "../zkproof/zeroPartyData/snarkjsZPD"
+//import { zpdCalldata } from "../zkproof/zeroPartyData/snarkjsZPD"
 
 //import contractAddress from "../utils/contractsaddress.json";
 
@@ -37,23 +37,6 @@ export default function Home(props) {
     router.push('/create-post')
   }
 
-  async function savePost(hash) {
-    /* anchor post to smart contract */
-    if (typeof window.ethereum !== 'undefined') {
-      const provider = new ethers.providers.Web3Provider(window.ethereum)
-      const signer = provider.getSigner()
-      const contract = new ethers.Contract(contractAddress, Vault.abi, signer)
-      console.log('contract: ', contract)
-      try {
-        const val = await contract.createPost(post.title, hash)
-        /* optional - wait for transaction to be confirmed before rerouting */
-        /* await provider.waitForTransaction(val.hash) */
-        console.log('val: ', val)
-      } catch (err) {
-        console.log('Error: ', err)
-      }
-    }    
-  }
 
   async function VerifyProof(){
     result = await contract.VerifyProof(
@@ -65,7 +48,7 @@ export default function Home(props) {
   }
 
   const verifyZPD = async () => {
-    console.log("Address", dataAccount?.address);
+    // console.log("Address", dataAccount?.address);
     calculateProof();
   };
   
@@ -121,40 +104,18 @@ export default function Home(props) {
     }
   };
 
-  // const verifySudoku = async () => {
-  //   console.log("Address", dataAccount?.address);
-  //   calculateProof();
-  // };
 
 
   return (
     <div>
       <div className={postList}>
-        {
-          /* map over the posts array and render a button with the post title */
-          // posts.map((post, index) => (
-          //   <Link href={`/post/${post[2]}`} key={index}>
-          //     <a>
-          //       <div className={linkStyle}>
-          //         <p className={postTitle}>{post[1]}</p>
-          //         <div className={arrowContainer}>
-          //         <img
-          //             src='/right-arrow.svg'
-          //             alt='Right arrow'
-          //             className={smallArrow}
-          //           />
-          //         </div>
-          //       </div>
-          //     </a>
-          //   </Link>
-          // ))
-        }
+
       </div>
       <div className={container}>
 
         <button onClick={verifyZPD}
         disabled={loadingVerifyBtn}>
-          Verify Sudoku
+          Verify Proof
         </button>
         
           
@@ -173,26 +134,26 @@ export default function Home(props) {
   )
 }
 
-export async function getServerSideProps() {
-  /* here we check to see the current environment variable */
-  /* and render a provider based on the environment we're in */
-  let provider
-  if (process.env.ENVIRONMENT === 'local') {
-    provider = new ethers.providers.JsonRpcProvider()
-  } else if (process.env.ENVIRONMENT === 'testnet') {
-    provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.matic.today')
-  } else {
-    provider = new ethers.providers.JsonRpcProvider('https://polygon-rpc.com/')
-  }
+// export async function getServerSideProps() {
+//   /* here we check to see the current environment variable */
+//   /* and render a provider based on the environment we're in */
+//   let provider
+//   if (process.env.ENVIRONMENT === 'local') {
+//     provider = new ethers.providers.JsonRpcProvider()
+//   } else if (process.env.ENVIRONMENT === 'testnet') {
+//     provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.matic.today')
+//   } else {
+//     provider = new ethers.providers.JsonRpcProvider('https://polygon-rpc.com/')
+//   }
 
-  const contract = new ethers.Contract(contractAddress, ZeroPartyDataAbi, provider)
-  //const data = await contract.fetchPosts()
-  return {
-    props: {
-       //posts: JSON.parse(JSON.stringify(data))
-     }
-  }
-}
+//   const contract = new ethers.Contract(contractAddress, ZeroPartyDataAbi, provider)
+//   //const data = await contract.fetchPosts()
+//   return {
+//     props: {
+//        //posts: JSON.parse(JSON.stringify(data))
+//      }
+//   }
+// }
 
 const arrowContainer = css`
   display: flex;
