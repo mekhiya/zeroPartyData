@@ -1,0 +1,15 @@
+node_modules
+
+zeroPartyData/ptau
+
+zeroPartyData/zeroPartyData_cpp
+zeroPartyData/zeroPartyData_js
+zeroPartyData/zeroPartyData_0000.zkey
+zeroPartyData/zeroPartyData_final.zkey
+zeroPartyData/zeroPartyData.r1cs
+zeroPartyData/zeroPartyData.sym
+zeroPartyData/proof.json
+zeroPartyData/public.json
+zeroPartyData/verification_key.json
+zeroPartyData/zeroPartyDataVerifier.sol
+zeroPartyData/parameters.txt
