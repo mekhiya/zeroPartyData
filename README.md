@@ -47,11 +47,11 @@ zk-SNARK based ZeroPartyData provides data protection, so when users connect to 
 
 ### Polygon:
 
-    solves common blockchain pain points, offering low gas fees and high speeds without sacrificing security.
+solves common blockchain pain points, offering low gas fees and high speeds without sacrificing security.
 
 ### Spheron:
 
-    Spheron is the simplest, fastest and most convenient way to deploy your web apps and projects onto Decentralized Cloud Storage
+Spheron is the simplest, fastest and most convenient way to deploy your web apps and projects onto Decentralized Cloud Storage
 
 ## CHALLENGES :
 
