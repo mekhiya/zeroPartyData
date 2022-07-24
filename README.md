@@ -1,4 +1,4 @@
-# Project ZeroPartyData
+# Project ZeroPartyData (HackFs Hackathon submission)
 
 ![Project zeroPartyData](https://user-images.githubusercontent.com/8952786/180658266-972dddd2-1b52-4f94-9871-df58f357b800.png?raw=true "Project zeroPartyData")
 
