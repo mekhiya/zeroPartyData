@@ -8,7 +8,7 @@ Zero-party data is data that a customer intentionally and proactively shares wit
 
 ## How Zero Knowledge Proof helps?
 
-zeroPartData uses zero knowledge proof to verify eligibility for gifts & discount offers by Brands. Project requires users to submit information about their Work-type, Age & income. This is suppose to be checked against eligibility criteria for availing discount offer.
+zeroPartyData uses zero knowledge proof to verify eligibility for gifts & discount offers by Brands. Project requires users to submit information about their Work-type, Age & income. This is suppose to be checked against eligibility criteria for availing discount offer.
 
 Personal data is not stored on-chain, however zero knowledge proof allows us to verify all 3 criteria. If proved, user address is noted for availing discount offer.
 
