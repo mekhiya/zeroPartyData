@@ -22,7 +22,7 @@ import contractAddress from "../utils/contractaddress.json";
 import zPDContractAbi from "../utils/abiFiles/ZeroPartyData.json";
 
 
-export default function zeroPartyData() {
+export default function ZeroPartyData() {
 
     const [workType,setWorkType] = useState(0);
     const [age,setAge] = useState(18);
