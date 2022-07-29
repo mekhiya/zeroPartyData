@@ -8,6 +8,11 @@ const nextConfig = {
     config.experiments = { asyncWebAssembly: true };
     return config;
   },
+  experimental: {
+    images: {
+      unoptimized: true,
+    },
+  },
 };
 
 module.exports = nextConfig;
