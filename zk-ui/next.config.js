@@ -8,6 +8,10 @@ const nextConfig = {
     config.experiments = { asyncWebAssembly: true };
     return config;
   },
+  images: {
+    loader: 'akamai',
+    path: '',
+  },
 };
 
 module.exports = nextConfig;
